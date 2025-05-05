@@ -3,6 +3,7 @@
 # MIT License
 
 import winsound
+import time
 
 # Note values rounded from https://doctormix.com/blog/note-to-frequency-chart/  
 # Some notes will be more off than others, but winsound only takes integers, but
@@ -154,4 +155,6 @@ def GetNoteList():
     
     return localNoteList
 
-
+def PlayNote(note, len):
+        winsound.Beep(int(note), len)
+        time.sleep((len/1000) + 0.01)
